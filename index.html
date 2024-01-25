@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #birthdayContainer {
+            text-align: center;
+        }
+
+        #birthdayMessage {
+            font-size: 24px;
+            color: #333;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        #celebrationCat {
+            width: 500px;
+            animation: spin 5s linear infinite;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="birthdayContainer">
+        <div id="birthdayMessage"></div>
+        <img id="celebrationCat" src="https://i.pinimg.com/originals/f7/5b/93/f75b937879da4cc7baf8df3e0c29b964.gif" alt="Gatito celebrando con pastel">
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            const nombre = prompt("Ingresa tu nombre:");
+            const fechaNacimiento = prompt("Ingresa tu fecha de nacimiento (DD/MM):");
+
+            const mensaje = `¡Feliz Cumpleaños, ${nombre}! 🎉`;
+
+            const birthdayMessage = document.getElementById("birthdayMessage");
+            birthdayMessage.textContent = mensaje;
+            birthdayMessage.classList.add("blink");
+        }
+
+        mostrarMensaje();
+    </script>
+
+</body>
+</html>
